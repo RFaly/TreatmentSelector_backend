@@ -1,4 +1,4 @@
-class Mutations::CreateTraitmentCategory < Mutations::BaseMutation
+class Mutations::CreateTreatmentCategory < Mutations::BaseMutation
 	argument :name, String, required: true
 	argument :email, String, required: true
 

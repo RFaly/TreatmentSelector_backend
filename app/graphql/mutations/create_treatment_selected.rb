@@ -1,4 +1,4 @@
-class Mutations::CreateTraitmentSelected < Mutations::BaseMutation
+class Mutations::CreateTreatmentSelected < Mutations::BaseMutation
 	argument :name, String, required: true
 	argument :email, String, required: true
 
