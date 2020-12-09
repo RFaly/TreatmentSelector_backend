@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_09_121946) do
+ActiveRecord::Schema.define(version: 2020_12_09_174243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,31 +21,31 @@ ActiveRecord::Schema.define(version: 2020_12_09_121946) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "traitment_categories", force: :cascade do |t|
+  create_table "treatment_categories", force: :cascade do |t|
     t.string "name_en"
     t.string "name_fr"
     t.string "name_mg"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "traitments", force: :cascade do |t|
-    t.string "name_en"
-    t.string "name_fr"
-    t.string "name_mg"
-    t.bigint "traitment_category_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["traitment_category_id"], name: "index_traitments_on_traitment_category_id"
   end
 
   create_table "treatment_selecteds", force: :cascade do |t|
-    t.bigint "traitment_id"
+    t.bigint "treatment_id"
     t.bigint "patient_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["patient_id"], name: "index_treatment_selecteds_on_patient_id"
-    t.index ["traitment_id"], name: "index_treatment_selecteds_on_traitment_id"
+    t.index ["treatment_id"], name: "index_treatment_selecteds_on_treatment_id"
+  end
+
+  create_table "treatments", force: :cascade do |t|
+    t.string "name_en"
+    t.string "name_fr"
+    t.string "name_mg"
+    t.bigint "treatment_category_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["treatment_category_id"], name: "index_treatments_on_treatment_category_id"
   end
 
 end
