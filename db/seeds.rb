@@ -1,14 +1,14 @@
-tc_one = TraitmentCategory.create(name_en:"Diagnostics")
+tc_one = TreatmentCategory.create(name_en:"Diagnostics")
 
 ["angiocardiography", "angiography", 
 	"brain scanning", "cholecystography", 
 	"echocardiography", "mammography",
 	"myelography", "prenatal testing", 
-	"ultrasound", "urography"].each do |traitment|
-		tc_one.traitments.create(name_en:traitment)
+	"ultrasound", "urography"].each do |treatment|
+		tc_one.treatments.create(name_en:treatment)
 end
 
-tc_two = TraitmentCategory.create(name_en:"Examinations")
+tc_two = TreatmentCategory.create(name_en:"Examinations")
 
 ["auscultation","autopsy",
 	"biopsy","bronchoscopy",
@@ -19,6 +19,6 @@ tc_two = TraitmentCategory.create(name_en:"Examinations")
 	"laparoscopy","mediastinoscopy",
 	"nasopharyngolaryngoscopy",
 	"palpation","percussion",
-	"Rubin’s test"].each do |traitment|
-		tc_two.traitments.create(name_en:traitment)
+	"Rubin’s test"].each do |treatment|
+		tc_two.treatments.create(name_en:treatment)
 end

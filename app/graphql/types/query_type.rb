@@ -16,9 +16,9 @@ module Types
     end 
 
     #/traitment_categories
-    field :traitment_categories, [Types::TraitmentCategoryType], null: false
-    def traitment_categories
-      TraitmentCategory.all
+    field :treatment_categories, [Types::TreatmentCategoryType], null: false
+    def treatment_categories
+      TreatmentCategory.all
     end
 
   end
@@ -27,12 +27,12 @@ end
 =begin
 Liste de tous les traitement et category
 {
-  traitmentCategories{
+  treatmentCategories{
     id,
     nameEn,
     nameFr,
     nameMg,
-    traitments {
+    treatments {
       id,
       nameEn,
       nameFr,
@@ -46,12 +46,12 @@ Liste des patients et les traitment + category
   patients {
     id,
     name,
-    traitments{
+    treatments{
       id,
       nameEn,
       nameFr,
       nameMg,
-      traitmentCategory {
+      treatmentCategory {
         id,
         nameEn,
         nameFr,
@@ -66,12 +66,12 @@ Liste de traitment d'une patien
   patient(id:2) {
     id,
     name,
-    traitments{
+    treatments{
       id,
       nameEn,
       nameFr,
       nameMg,
-      traitmentCategory {
+      treatmentCategory {
         id,
         nameEn,
         nameFr,

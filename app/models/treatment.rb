@@ -1,4 +1,4 @@
-class Traitment < ApplicationRecord
+class Treatment < ApplicationRecord
 	belongs_to :traitment_category
 
 	has_many :treatment_selecteds

@@ -1,23 +1,27 @@
 class Mutations::CreateTraitment < Mutations::BaseMutation
-	argument :name, String, required: true
-	argument :email, String, required: true
+	argument :name_en, String, required: true
+	argument :name_fr, String, required: false
+	argument :name_mg, String, required: false
+	argument :traitment_category_id, ID, required: true
 
-	field :user, Types::UserType, null: false
+	field :traitment, Types::TraitmentType, null: false
 	field :errors, [String], null: false
 
-	def resolve(name:, email:)
-		user = User.new(name: name, email: email)
-		if user.save
+	def resolve(name_en:, name_fr:, name_mg:, traitment_category_id:)
+		traitment = Traitment.new(name_en: name_en, name_fr: name_fr, name_mg: name_mg, traitment_category_id: traitment_category_id)
+		if traitment.save
 			{
-				user: user,
+				traitment: traitment,
 				errors: []
 			}
 		else
 			{
-				user: nil,
-				errors: user.errors.full_messages
+				traitment: nil,
+				errors: traitment.errors.full_messages
 			}
 		end
 	end
 
 end
+
+
