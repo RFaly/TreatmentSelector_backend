@@ -46,7 +46,7 @@ Liste des patients et les traitment + category
   patients {
     id,
     name,
-    treatments{
+    treatment{
       id,
       nameEn,
       nameFr,
@@ -66,7 +66,7 @@ Liste de traitment d'une patien
   patient(id:2) {
     id,
     name,
-    treatments{
+    treatment{
       id,
       nameEn,
       nameFr,

@@ -6,9 +6,7 @@ module Types
 		field :create_treatment, mutation: Mutations::CreateTreatment
 		
 		field :create_treatment_category, mutation: Mutations::CreateTreatmentCategory
-		
-		field :create_treatment_selected, mutation: Mutations::CreateTreatmentSelected
-		
+				
 		field :update_treatment, mutation: Mutations::UpdateTreatment
 		
 		field :update_treatment_category, mutation: Mutations::UpdateTreatmentCategory
