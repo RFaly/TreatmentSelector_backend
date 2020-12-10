@@ -1,40 +1,74 @@
 module Types
   class MutationType < Types::BaseObject
 
-		field :create_patient, mutation: Mutations::createPatient
+		field :create_patient, mutation: Mutations::CreatePatient
 
-		field :create_treatment, mutation: Mutations::createTreatment
+		field :create_treatment, mutation: Mutations::CreateTreatment
 		
-		field :create_treatment_category, mutation: Mutations::createTreatmentCategory
+		field :create_treatment_category, mutation: Mutations::CreateTreatmentCategory
 		
-		field :create_treatment_selected, mutation: Mutations::createTreatmentSelected
+		field :create_treatment_selected, mutation: Mutations::CreateTreatmentSelected
 		
-		field :update_treatment, mutation: Mutations::updateTreatment
+		field :update_treatment, mutation: Mutations::UpdateTreatment
 		
-		field :update_treatment_category, mutation: Mutations::updateTreatmentCategory
+		field :update_treatment_category, mutation: Mutations::UpdateTreatmentCategory
 		
-		field :destroy_treatment, mutation: Mutations::destroyTreatment
+		field :destroy_treatment, mutation: Mutations::DestroyTreatment
 		
-		field :destroy_treatment_category, mutation: Mutations::destroyTreatmentCategory
+		field :destroy_treatment_category, mutation: Mutations::DestroyTreatmentCategory
 		
   end
 end
 
 #call mutation
+
 =begin
 
-mutation{
-  createUser( input: {
-    name: "Bonbon anglais",
-    email: "min@an.com"
-  }) {
-		user {
-      id,
-      name,
-      email
-    }
-    errors
-  }
+mutation {
+	createPatient(input:{
+		name: "Bonjour a vous aussi"
+	}){
+		patient {
+			id,
+			name
+		}
+		errors
+	}
+}
+
+~~~~~~~~~~~~~~~~
+
+mutation {
+	createTreatment(input:{
+		nameEn:"Good morning",
+    nameFr:"Bonjour",
+    nameMg:"Salama e!",
+    treatmentCategoryId:3
+	}){
+		treatment {
+			id,
+			nameFr
+		}
+		errors
+	}
+}
+
+~~~~~~~~~~~~~~
+
+mutation {
+	CreateTreatmentCategory(input:{
+		nameEn:"Keek",
+    nameFr:"Tête",
+    nameMg:"Loha",
+	}){
+		treatment_category {
+			id,
+			nameEn,
+			nameMg,
+			nameFr
+		}
+		errors
+	}
 }
 
 =end

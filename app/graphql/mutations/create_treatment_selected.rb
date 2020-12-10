@@ -1,21 +1,23 @@
 class Mutations::CreateTreatmentSelected < Mutations::BaseMutation
 	argument :name, String, required: true
-	argument :email, String, required: true
+	argument :treatment_ids,[ID], required: true
 
-	field :user, Types::UserType, null: false
+	field :patient, Types::PatientType, null: false
 	field :errors, [String], null: false
 
-	def resolve(name:, email:)
-		user = User.new(name: name, email: email)
-		if user.save
+
+	def resolve(name:,treatment_ids)
+		patient = Patient.new(name: name)
+		patient.treatments.push(Treatment.find(treatment_ids))
+		if patient.save
 			{
-				user: user,
+				patient: patient,
 				errors: []
 			}
 		else
 			{
-				user: nil,
-				errors: user.errors.full_messages
+				patient: nil,
+				errors: patient.errors.full_messages
 			}
 		end
 	end
