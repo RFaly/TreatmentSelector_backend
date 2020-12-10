@@ -5,7 +5,7 @@ class Mutations::CreatePatient < Mutations::BaseMutation
 	field :patient, Types::PatientType, null: false
 	field :errors, [String], null: false
 
-	def resolve(name:)
+	def resolve(name:,treatment_id:)
 		patient = Patient.new(name: name, treatment_id: treatment_id)
 		if patient.save
 			{

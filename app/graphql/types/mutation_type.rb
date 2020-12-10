@@ -24,7 +24,8 @@ end
 
 mutation {
 	createPatient(input:{
-		name: "Bonjour a vous aussi"
+		name: "Bonjour a vous aussi",
+    treatmentId: 2
 	}){
 		patient {
 			id,
@@ -54,17 +55,75 @@ mutation {
 ~~~~~~~~~~~~~~
 
 mutation {
-	CreateTreatmentCategory(input:{
+	createTreatmentCategory(input:{
 		nameEn:"Keek",
     nameFr:"Tête",
     nameMg:"Loha",
 	}){
-		treatment_category {
+		treatmentCategory {
 			id,
 			nameEn,
 			nameMg,
 			nameFr
 		}
+		errors
+	}
+}
+
+~~~~~~~~~~~~~~
+
+mutation{
+	updateTreatment(input:{
+		treatmentId:2
+		nameEn: "Hello"
+		nameFr: "Tsika aby e"
+		nameMg: "Salama topoko ô"
+	}){
+		treatment{
+			id,
+			nameEn,
+			nameMg,
+			nameFr
+		}
+		errors
+	}
+}
+
+~~~~~~~~~~~~~~
+
+mutation{
+	updateTreatmentCategory(input:{
+		treatmentCategoryId:2
+		nameEn: "Hello"
+		nameFr: "Tsika aby e"
+		nameMg: "Salama topoko ô"
+	}){
+		treatmentCategory{
+			id,
+			nameEn,
+			nameMg,
+			nameFr
+		}
+		errors
+	}
+}
+
+~~~~~~~~~~~~~~
+
+mutation{
+	destroyTreatment(input:{
+		treatmentId:2
+	}){
+		errors
+	}
+}
+
+~~~~~~~~~~~~~~
+
+mutation{
+	destroyTreatmentCategory(input:{
+		treatmentCategoryId:2
+	}){
 		errors
 	}
 }
