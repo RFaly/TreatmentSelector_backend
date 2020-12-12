@@ -1,6 +1,6 @@
 class Mutations::CreatePatient < Mutations::BaseMutation
 	argument :name, String, required: true
-	argument :treatment_id, Int, required: true
+	argument :treatment_id, Integer, required: true
 
 	field :patient, Types::PatientType, null: false
 	field :errors, [String], null: false

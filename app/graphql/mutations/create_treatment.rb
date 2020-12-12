@@ -2,7 +2,7 @@ class Mutations::CreateTreatment < Mutations::BaseMutation
 	argument :name_en, String, required: true
 	argument :name_fr, String, required: false
 	argument :name_mg, String, required: false
-	argument :treatment_category_id, Int, required: true
+	argument :treatment_category_id, Integer, required: true
 
 	field :treatment, Types::TreatmentType, null: false
 	field :errors, [String], null: false
