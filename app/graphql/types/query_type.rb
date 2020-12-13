@@ -21,6 +21,14 @@ module Types
       TreatmentCategory.all
     end
 
+    #/traitment_categories
+    field :treatments, [Types::TreatmentType], null: false do
+      argument :treatment_category, ID, required: true
+    end
+    def treatments(treatment_category:)
+      TreatmentCategory.find(treatment_category).treatments
+    end
+
   end
 end
 
