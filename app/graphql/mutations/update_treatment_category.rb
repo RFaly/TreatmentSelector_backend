@@ -1,5 +1,5 @@
 class Mutations::UpdateTreatmentCategory < Mutations::BaseMutation
-	argument :treatment_category_id, ID, required: true
+	argument :treatment_category_id, Int, required: true
 	argument :name_en, String, required: true
 	argument :name_fr, String, required: false
 	argument :name_mg, String, required: false
