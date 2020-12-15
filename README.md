@@ -30,3 +30,6 @@ https://gorails.com/setup/ubuntu/20.10
 		* ▶ cd TreatmentSelector_frontend 
 		* ▶ npm install
 		* ▶ npm start
+	* connect to admin doctor
+		* ▶ email: doctor@admin.site
+		* ▶ password:doctor@admin.site
