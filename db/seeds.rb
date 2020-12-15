@@ -22,3 +22,5 @@ tc_two = TreatmentCategory.create(name_en:"Examinations")
 	"Rubin’s test"].each do |treatment|
 		tc_two.treatments.create(name_en:treatment)
 end
+
+user = Doctor.create(email: "doctor@admin.site", password: "doctor@admin.site")
