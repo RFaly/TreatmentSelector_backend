@@ -12,15 +12,8 @@ https://gorails.com/setup/ubuntu/20.10
 
 * Deployment instructions
 
-rails db:create
-rails db:migrate
-
-
-#autre
-
-https://www.youtube.com/watch?v=kSlJH3hrV58&t=1944s
-https://www.youtube.com/watch?v=TOq86ozyHIA&t=1810s
-
-https://graphql-ruby.org/getting_started
-https://dev.to/brandonbrown4792/web-sockets-with-rails-6-and-reactjs-2c45
-https://www.apollographql.com/docs/react/get-started/
+$ git clone https://github.com/RFaly/TreatmentSelector_backend.git
+$ cd TreatmentSelector_backend
+$ bundle
+$ rails db:create db:migrate db:seed
+$ rails s -p 4000
